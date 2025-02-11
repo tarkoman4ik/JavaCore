@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Main {
 
@@ -31,7 +32,42 @@ public class Main {
         trader1.sleep();
     }
 
+    //Collections testing
+    public static void TestC(){
+        Queue<String> queue = new LinkedList<>();
+        //Causes error if empty
+        //queue.remove();
+        queue.poll();
+
+        Comparator<String> stringLenghtCompare = new Comparator<String>() {
+            @Override
+            public int compare(String s1,String s2){
+                return s1.length()-s2.length();
+            }
+        };
+
+        Queue<String> queue2 = new PriorityQueue<>(stringLenghtCompare);
+        queue2.add("Lisa");
+        queue2.add("Robert");
+        queue2.add("John");
+        queue2.add("Chris");
+        queue2.add("Angelina");
+        queue2.add("Joe");
+
+        while (!queue2.isEmpty()) {
+            System.out.println(queue2.remove());
+        }
+        System.out.println();
+        Map<Character,Integer> map = new HashMap<>();
+        map.put('X',1);
+        map.put('Y',75);
+        map.put('Z',52);
+        for (var x:map.entrySet()){
+            System.out.println(x.getKey()+":"+x.getValue());
+        }
+    }
+
     public static void main(String[] args) {
-        TestB();
+        TestC();
     }
 }
