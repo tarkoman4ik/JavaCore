@@ -1,7 +1,7 @@
-import jdk.incubator.vector.VectorOperators;
 
 public class Main {
 
+    //Anonymous class testing
     public static void TestA(){
         Programmer pg1 = new Programmer() {
             @Override
@@ -14,7 +14,24 @@ public class Main {
         pg2.printHW();
     }
 
+    //Abstract class + Inheritance + Interface testing
+    public static void TestB(){
+        Teacher teacher1 = new Teacher(8,"watermelon");
+        Trader trader1 = new Trader(7,"cheeseburger");
+        teacher1.sayHello();
+        teacher1.teachStudent();
+        teacher1.eat();
+        teacher1.sayGoodbye();
+        teacher1.sleep();
+        System.out.println();
+        trader1.sayHello();
+        trader1.sellFood();
+        trader1.eat();
+        trader1.sayGoodbye();
+        trader1.sleep();
+    }
+
     public static void main(String[] args) {
-        TestA();
+        TestB();
     }
 }
