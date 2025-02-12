@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.concurrent.Exchanger;
 
 public class Main {
 
@@ -67,7 +68,14 @@ public class Main {
         }
     }
 
+    //Exchanger testing
+    public static void TestD(){
+        Exchanger<String> exchanger = new Exchanger<>();
+        new UseString(exchanger);
+        new MakeString(exchanger);
+    }
+
     public static void main(String[] args) {
-        TestC();
+        TestD();
     }
 }
